@@ -1,6 +1,35 @@
-# Assignment 7
+# Implementation of Huffman Compression  
 
-The files all come together to implement a huffman compression
+These programs implement David Huffman's lossless compression algorithm. It is implemented using sevaral differnt modules that are used to build a huffman tree, encode said tree, dump the tree, rebuild the tree, and decompress the file.
+
+# Building
+
+Run the following to build the 'encode' and 'decode' executables
+```
+make
+```
+
+or 
+
+```
+make all
+```
+
+Run the following to delete executables and objects
+
+```
+make clean
+```
+
+# Running encode
+```
+./encode
+```
+
+# Running decode
+```
+./decode
+```
 
 ## Files
 
@@ -8,29 +37,39 @@ The files all come together to implement a huffman compression
 
 This file contains my implementation of the Huffman encoder.
 
+- `-h`: Shows help
+- `-i infile`: Input containing graph (default: stdin)
+- `-o outfile`: Output of computed path (default: stdout)
+- `-v`: Enable verbose printing of statistics.
+
 ### decode.c
 
 This file contains my implementation of the Huffman decoder.
 
+- `-h`: Shows help
+- `-i infile`: Input containing graph (default: stdin)
+- `-o outfile`: Output of computed path (default: stdout)
+- `-v`: Enable verbose printing of statistics.
+
 ### node.c,h
 
-Contains the source and header files 
+Contains the source and header files for the node ADT
 
 ### stack.c,h
 
-Contains the source and header files 
+Contains the source and header files for the stack ADT
 
 ### code.c,h
 
-Contains the source and header file 
+Contains the source and header file for the code ADT
 
 ### pq.c,h
 
-Contains the sorce and header file 
+Contains the sorce and header file for the priority queues ADT
 
 ### huffman.c,h
 
-Contains the source and header file 
+Contains the source and header file for the huffman functions 
 
 ### Makefile
 
@@ -43,25 +82,3 @@ Contains header defines
 ### defines.h
 
 Contains macros
-
-### DESIGN.pdf
-
-This file has the infromation regarding the design of the code with supporting psuedocode 
-
-###Sources
-
-CSE 13s Discord server
-
-https://www.geeksforgeeks.org/lseek-in-c-to-read-the-alternate-nth-byte-and-write-it-in-another-file/
-
-https://www.geeksforgeeks.org/union-c/
-
-https://www.thegeekstuff.com/2012/06/c-temporary-files/
-
-https://lwn.net/Articles/619146/
-
-https://www.tutorialspoint.com/c_standard_library/c_function_memset.htm
-
-
-
-
