@@ -4,7 +4,6 @@
 #include <stdint.h>
 #include <stdlib.h>
 
-// Code for min heap comes from assgn 4 heap sort
 
 // Struct to create a Priority Queue
 struct PriorityQueue {
