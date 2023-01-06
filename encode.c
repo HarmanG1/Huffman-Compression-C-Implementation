@@ -16,9 +16,6 @@
 
 #define OPTIONS "i:o:vh"
 
-// credit to discord user @Athanasius Kircher#1515 (Professor Long) for the idea
-// to use a union
-// https://discord.com/channels/1022955081596932178/1022957811019284531/1047771289726754816
 union {
   uint8_t b[sizeof(Header)];
   Header s;
