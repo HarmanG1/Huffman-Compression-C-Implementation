@@ -7,7 +7,7 @@
 #include "stack.h"
 #include <stdint.h>
 #include <stdio.h>
-// Function builds tree using given psudocode as reference
+// Function builds tree 
 Node *build_tree(uint64_t hist[static ALPHABET]) {
   PriorityQueue *q = pq_create(ALPHABET); // creats a pq of size ALPHABET
   for (uint32_t i = 0; i < ALPHABET; i++) // loops through the passed in hist
@@ -21,7 +21,7 @@ Node *build_tree(uint64_t hist[static ALPHABET]) {
 
   Node *left, *right, *parent; // sets up the vars to be used in the loop
   while (pq_size(q) > 1) {
-    // Follows the given psuedocode and de and enqueues as expected
+    // De and enqueues as expected
     dequeue(q, &left);
     dequeue(q, &right);
     parent = node_join(left, right);
@@ -36,7 +36,7 @@ Node *build_tree(uint64_t hist[static ALPHABET]) {
 
 // static code var to be used
 static Code c = {0};
-// Function fills out the code table as given in the psuedocode
+// Function fills out the code table 
 void build_codes(Node *root, Code table[static ALPHABET]) {
   uint8_t b = 0;
   if (root != NULL) // checks if root is null
@@ -46,7 +46,7 @@ void build_codes(Node *root, Code table[static ALPHABET]) {
     {
       table[root->symbol] = c;
     } else {
-      // Follows the given pseudocode
+      // Pushes and pops the bits
       code_push_bit(&c, 0);
       build_codes(root->left, table);
       code_pop_bit(&c, &b);
@@ -57,7 +57,7 @@ void build_codes(Node *root, Code table[static ALPHABET]) {
     }
   }
 }
-// Function follows the given pseudocode to write the tree to the outfile with a
+// Writes the tree to the outfile with a
 // post order transversal
 void dump_tree(int outfile, Node *root) {
   if (root != NULL) {
